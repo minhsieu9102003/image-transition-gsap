@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('./navigation') %>
+        <h1>Profile</h1>
+        <h2>Welcome, <%= member.firstname %>
+                <%= member.lastname %>
+        </h2>
+        <p>Join Date: <%= member.join_date %>
+        </p>
+        <p>Address 1: <%= member.address1 %>
+        </p>
+        <p>Address 2: <%= member.address2 %>
+        </p>
+        <% if (member.membership) { %>
+            <p>Membership Tier: <%= member.membership.tier %>
+            </p>
+            <% } else { %>
+                <p>No Membership</p>
+                <% } %>
+                    <% if (member.room) { %>
+                        <p>Room: <%= member.room.name %>
+                        </p>
+                        <% } else { %>
+                            <p>No Room Assigned</p>
+                            <% } %>
+</body>
+
+</html>

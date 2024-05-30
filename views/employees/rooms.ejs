@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+</head>
+
+<body>
+    <h1>Rooms Assigned</h1>
+    <ul>
+        <% rooms.forEach(room=> { %>
+            <li>
+                <h2>
+                    <%= room.name %>
+                </h2>
+                <h3>Capacity: <%= room.capacity %>
+                </h3>
+                <h4>Equipments:</h4>
+                <ul>
+                    <% room.equipment.forEach(equipment=> { %>
+                        <li>
+                            <%= equipment.name %> - <%= equipment.quantity %>
+                        </li>
+                        <% }) %>
+                </ul>
+                <h4>Members:</h4>
+                <ul>
+                    <% room.members.forEach(member=> { %>
+                        <li>
+                            <%= member.firstname %>
+                                <%= member.lastname %>
+                        </li>
+                        <% }) %>
+                </ul>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>
